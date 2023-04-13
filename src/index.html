@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Главная" })
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        <div class="dashboard">
+          <div class="dashboard__header header-dashboard">
+            <div class="header-dashboard__icon">
+              <img src="@img/icons/header_icon.svg" alt="header-icon" />
+            </div>
+            <h1 class="header-dashboard__title">Dashboard<span>v.01</span></h1>
+          </div>
+          <div class="dashboard__menu menu-dashboard">
+            <ul class="menu-dashboard__items">
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/1.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Dashboard</a>
+              </li>
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/2.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Product</a>
+              </li>
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/3.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Customers</a>
+              </li>
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/4.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Income</a>
+              </li>
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/5.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Promote</a>
+              </li>
+              <li class="menu-dashboard__item">
+                <img
+                  src="@img/icons/dashboard/6.svg"
+                  alt="icon"
+                  class="menu-dashboard__icon" />
+                <a href="/" class="menu-dashboard__link">Help</a>
+              </li>
+            </ul>
+          </div>
+          <div class="dashboard__footer footer-dashboard">
+            <div class="footer-dashboard__image">
+              <img src="@img/icons/dashboard/user.jpg" alt="user" />
+            </div>
+            <div class="footer-dashboard__user">
+              <div class="footer-dashboard__name">Evano</div>
+              <div class="footer-dashboard__post">Project Manager</div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h2 class="content__hello">Hello Evano</h2>
+          <div class="content__container">
+            <div class="content__header header-content">
+              <div class="header-content__title">All Customers</div>
+              <div class="header-content__searchs">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  placeholder="Search"
+                  class="header-content__search" />
+              </div>
+            </div>
+            <div class="content__product product-content">
+              <table class="product-content__table">
+                <thead class="product-content__header">
+                  <tr class="product-content__list">
+                    <th>Customer Name</th>
+                    <th>Company</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tr class="product-content__info">
+                  <td>Jane Cooper</td>
+                  <td>Microsoft</td>
+                  <td>(225) 555-0118</td>
+                  <td>jane@microsoft.com</td>
+                  <td>United States</td>
+                  <td>
+                    <button type="submit" class="product-content__button">
+                      Active
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>
