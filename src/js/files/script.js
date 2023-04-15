@@ -2,7 +2,9 @@
 // import { isMobile } from "./functions.js";
 import data from "../persons.js";
 window.addEventListener("DOMContentLoaded", (event) => {
-  const tBody = document.querySelector(".product-content__body");
+  const tBody = document.querySelector(".product-content__body"),
+    entries = document.querySelector(".navigation-length__entries");
+  let personLength;
 
   data.forEach((person) => {
     const tag = `
@@ -17,6 +19,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     `;
     const persone = document.createElement("tr");
     persone.classList.add("product-content__person");
+
+    personLength = person.length;
+    console.log("length", person);
 
     persone.innerHTML = tag;
     tBody.appendChild(persone);
