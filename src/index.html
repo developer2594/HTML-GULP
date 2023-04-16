@@ -14,30 +14,58 @@
           <div class="dashboard__menu menu-dashboard">
             <ul class="menu-dashboard__items">
               <li class="menu-dashboard__item">
-                <img
-                  src="@img/icons/1.svg"
-                  alt="icon"
-                  class="menu-dashboard__icon" />
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#1"></use>
+                </svg>
                 <a href="/" class="menu-dashboard__link">Dashboard</a>
-              </li>
-              <li class="menu-dashboard__item icon-2">
-                <a href="/" class="menu-dashboard__link">Product</a>
-              </li>
-              <li class="menu-dashboard__item icon-3">
-                <a href="/" class="menu-dashboard__link">Customers</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
               </li>
               <li class="menu-dashboard__item">
-                <img
-                  src="@img/icons/4.svg"
-                  alt="icon"
-                  class="menu-dashboard__icon" />
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#2"></use>
+                </svg>
+                <a href="/" class="menu-dashboard__link">Product</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
+              </li>
+              <li class="menu-dashboard__item">
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#3"></use>
+                </svg>
+                <a href="/" class="menu-dashboard__link">Customers</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
+              </li>
+              <li class="menu-dashboard__item">
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#4"></use>
+                </svg>
                 <a href="/" class="menu-dashboard__link">Income</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
               </li>
-              <li class="menu-dashboard__item icon-5">
+              <li class="menu-dashboard__item">
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#5"></use>
+                </svg>
                 <a href="/" class="menu-dashboard__link">Promote</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
               </li>
-              <li class="menu-dashboard__item icon-6">
+              <li class="menu-dashboard__item">
+                <svg class="menu-dashboard__icon">
+                  <use xlink:href="@img/icons/sprite.svg#6"></use>
+                </svg>
                 <a href="/" class="menu-dashboard__link">Help</a>
+                <svg class="menu-dashboard__icon sprite-icon">
+                  <use xlink:href="@img/icons/sprite.svg#arrow"></use>
+                </svg>
               </li>
             </ul>
           </div>
@@ -57,10 +85,13 @@
             <div class="content__header header-content">
               <div class="header-content__title">All Customers</div>
               <div class="header-content__searchs">
+                <button class="header-content__btn">
+                  <img src="@img/icons/search.svg" alt="search" />
+                </button>
                 <input
                   autocomplete="off"
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search..."
                   class="header-content__search" />
               </div>
             </div>
@@ -86,13 +117,19 @@
                   <span class="navigation-length__entries">256K</span> entries
                 </div>
                 <div class="navigation-persons__panell panell-navigate">
-                  <button
-                    class="panell-navigate__arrow_left squere icon-arrow-left"></button>
+                  <button class="panell-navigate__arrow_left squere">
+                    <svg class="panell-navigate__icon">
+                      <use xlink:href="@img/icons/sprite.svg#left"></use>
+                    </svg>
+                  </button>
                   <div class="panell-navigate__numbers">
                     <div class="panell-navigate__num squere active">1</div>
                   </div>
-                  <button
-                    class="panell-navigate__arrow_right squere icon-arrow-right"></button>
+                  <button class="panell-navigate__arrow_right squere">
+                    <svg class="panell-navigate__icon">
+                      <use xlink:href="@img/icons/sprite.svg#right"></use>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
