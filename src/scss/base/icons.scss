@@ -1,87 +1,18 @@
 %ic {
-  font-family: "icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 [class^="_icon-"],
 [class*=" _icon-"] {
-  &:before {
-    @extend %ic;
-    display: block;
-  }
-}
-//========================================================================================================================================================
-@font-face {
-  font-family: "icomoon";
-  src: url("fonts/icomoon.eot?hi7ty");
-  src: url("fonts/icomoon.eot?hi7ty#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?hi7ty") format("truetype"),
-    url("fonts/icomoon.woff?hi7ty") format("woff"),
-    url("fonts/icomoon.svg?hi7ty#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-search:before {
-  content: "\e900";
-  position: absolute;
-  color: #000;
-  font-size: rem(22);
-  border: 1px solid red;
-  z-index: 50;
-}
-.icon-2:before {
-  content: "\e901";
-}
-.icon-3:before {
-  content: "\e902";
-}
-.icon-5:before {
-  content: "\e904";
-}
-.icon-6:before {
-  content: "\e905";
-}
-.icon-arrow-left:before {
-  content: "\e906";
-  color: #404b52;
-}
-.icon-arrow-right:before {
-  content: "\e908";
-  color: #404b52;
-}
-.icon-header_icon:before {
-  content: "\e90a";
-}
-.icon {
-  &-2:before,
-  &-3:before,
-  &-5:before,
-  &-6:before {
-    font-size: rem(24);
-    color: #9197b3;
-    margin: 0px rem(16) 0px 0px;
-  }
+	&:before {
+		@extend %ic;
+		display: block;
+	}
 }

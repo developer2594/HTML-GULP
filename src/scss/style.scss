@@ -6,23 +6,24 @@
 // Подключение шрифтов ===========================================================================================================================================================================================================================================================================
 //&display=swap - добавить при подключении через плагин
 @import "base/fonts";
-// @import url("https://fonts.google.com/share?selection.family=Poppins:wght@500;600&display=swap");
+
 // Подключение иконочных шрифтов ==============================================================================================================================================================================================================================================================================
-@import "base/icons";
+//@import "base/icons";
+
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "Poppins";
+$fontFamily: "";
 $fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1140;
+$maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
 $maxWidthContainer: 1170;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 20;
+$containerPadding: 30;
 
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
@@ -33,9 +34,7 @@ $responsiveType: 1;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em(
-  $containerWidth
-); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
@@ -47,22 +46,22 @@ $mainColor: #000;
 @import "base/null";
 
 body {
-  color: $mainColor;
-  // Скролл заблокирован
-  .lock & {
-    overflow: hidden;
-  }
+	color: $mainColor;
+	// Скролл заблокирован
+	.lock & {
+		overflow: hidden;
+	}
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-  min-height: 100%;
-  display: grid;
-  overflow: hidden;
-  grid-template-rows: auto 1fr auto;
-  // Сайт загружен
-  .loaded & {
-  }
+	min-height: 100%;
+	display: grid;
+	overflow: hidden;
+	grid-template-rows: auto 1fr auto;
+	// Сайт загружен
+	.loaded & {
+	}
 }
 
 // Ограничивающий контейнер ===========================================================================================================
@@ -74,42 +73,42 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
-  // Отзывчивая
-  [class*="__container"] {
-    @if ($maxWidthContainer>0) {
-      max-width: rem($maxWidthContainer);
-      box-sizing: content-box;
-      margin: 0 auto;
-    }
-    @if ($containerPadding>0) {
-      padding: 0 rem(math.div($containerPadding, 2));
-    }
-  }
+	// Отзывчивая
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
 } @else {
-  // По брейк-поинтам
-  [class*="__container"] {
-    margin: 0 auto;
-    @if ($maxWidthContainer>0) {
-      max-width: rem($maxWidthContainer);
-      box-sizing: content-box;
-    } @else {
-      @if ($containerPadding>0) {
-        padding: 0 rem(math.div($containerPadding, 2));
-      }
-    }
-    @media (max-width: $pc) {
-      max-width: rem(970);
-    }
-    @media (max-width: $tablet) {
-      max-width: rem(750);
-    }
-    @media (max-width: $mobile) {
-      max-width: none;
-      @if ($containerPadding>0 and $maxWidthContainer>0) {
-        padding: 0 rem(math.div($containerPadding, 2));
-      }
-    }
-  }
+	// По брейк-поинтам
+	[class*="__container"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
 }
 
 // Подключение базовых стилей, шаблонов (заготовок) и вспомагательных классов
@@ -117,13 +116,13 @@ body {
 @import "base";
 
 // Подключение стилей отдельных блоков
-// @import "header";
-// @import "footer";
+@import "header";
+@import "footer";
 
 // Подключение стилей отдельных страниц
 @import "home";
 
 // Основной блок страницы ====================================================================================================
 .page {
-  min-width: 0;
+	min-width: 0;
 }
