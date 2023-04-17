@@ -80,6 +80,7 @@ body {
       max-width: rem($maxWidthContainer);
       box-sizing: content-box;
       margin: 0 auto;
+      background-color: #fff;
     }
     @if ($containerPadding>0) {
       padding: 0 rem(math.div($containerPadding, 2));
