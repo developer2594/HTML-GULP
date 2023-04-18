@@ -6,7 +6,7 @@
 
 .icon-menu {
   display: none;
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     display: block;
     position: relative;
     width: 30px;

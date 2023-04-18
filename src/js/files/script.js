@@ -2,7 +2,7 @@
 // import { isMobile } from "./functions.js";
 import data from "../persons.js";
 window.addEventListener("DOMContentLoaded", (event) => {
-  const tBody = document.querySelector(".product-content__body"),
+  const tBody = document.querySelector(".content-info__body"),
     entries = document.querySelector(".navigation-length__entries");
   let personLength = data.length;
 
@@ -10,17 +10,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   data.forEach((person) => {
     const tag = `
-    <td class="product-content__name">${person.name}</td>
-    <td class="product-content__company">${person.company}</td>
-    <td class="product-content__phone">${person.phone}</td>
-    <td class="product-content__email">${person.email}</td>
-    <td class="product-content__country">${person.country}</td>
-    <td class="product-content__button">
-    <button class="product-content__btn">${person.status}</button>
+    <td class="content-info__name">${person.name}</td>
+    <td class="content-info__company">${person.company}</td>
+    <td class="content-info__phone">${person.phone}</td>
+    <td class="content-info__email">${person.email}</td>
+    <td class="content-info__country">${person.country}</td>
+    <td class="content-info__button">
+    <button class="content-info__btn">${person.status}</button>
     </td>
     `;
     const persone = document.createElement("tr");
-    persone.classList.add("product-content__person");
+    persone.classList.add("content-info__person");
 
     personLength = person.length;
 

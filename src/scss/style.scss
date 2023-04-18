@@ -17,9 +17,9 @@ $fontSize: rem(14); // где 14(px) - размер шрифта по умолч
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1140;
+$maxWidth: 1440;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 970;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 20;
@@ -131,4 +131,13 @@ body {
 // Основной блок страницы ====================================================================================================
 .page {
   min-width: 0;
+  display: flex;
+}
+.content {
+  @include adaptiveValue("padding-top", 40, 20, 1440, 1100, 1);
+  @include adaptiveValue("padding-left", 70, 20, 1440, 1100, 1);
+  width: 80%;
+  @media (max-width: $tablet) {
+    width: 90%;
+  }
 }
