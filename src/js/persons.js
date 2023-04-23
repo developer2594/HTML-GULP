@@ -11,7 +11,7 @@ const persons = [
 
   {
     id: "2",
-    name: " Floyd Miles",
+    name: "Floyd Miles",
     company: "Yahoo",
     phone: " (205) 555-0100",
     email: "floyd@yahoo.com",
