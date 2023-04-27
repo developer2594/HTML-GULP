@@ -6,24 +6,23 @@
 // Подключение шрифтов ===========================================================================================================================================================================================================================================================================
 //&display=swap - добавить при подключении через плагин
 @import "base/fonts";
-@import url(https://fonts.googleapis.com/css?family=Montserrat:500,600,700);
+// @import url("https://fonts.google.com/share?selection.family=Poppins:wght@500;600&display=swap");
 // Подключение иконочных шрифтов ==============================================================================================================================================================================================================================================================================
 @import "base/icons";
-
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "Montserrat";
+$fontFamily: "Poppins";
 $fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1920;
+$maxWidth: 1440;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1400;
+$maxWidthContainer: 970;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 30;
+$containerPadding: 20;
 
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
@@ -34,36 +33,40 @@ $responsiveType: 1;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em(
+  $containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
 
 // Основной цвет шрифта
 $mainColor: #000;
-$mainDarkColor: #141414;
-$mainOrangeColor: #e8aa31;
-
+$line: #eee;
+$hover: #5932ea;
+$white: #fff;
+$bodyColor: #ebf0f8;
 // Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
 @import "base/null";
 
 body {
-   color: $mainColor;
-   // Скролл заблокирован
-   .lock & {
-      overflow: hidden;
-   }
+  color: $mainColor;
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+  }
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-   min-height: 100%;
-   display: flex;
-   flex-direction: column;
-   overflow: hidden;
-   // Сайт загружен
-   .loaded & {
-   }
+  min-height: 100%;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: auto 1fr auto;
+  background-color: $bodyColor;
+  // Сайт загружен
+  .loaded & {
+  }
 }
 
 // Ограничивающий контейнер ===========================================================================================================
@@ -75,42 +78,43 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
-   // Отзывчивая
-   [class*="__container"] {
-      @if ($maxWidthContainer>0) {
-         max-width: rem($maxWidthContainer);
-         box-sizing: content-box;
-         margin: 0 auto;
-      }
-      @if ($containerPadding>0) {
-         padding: 0 rem(math.div($containerPadding, 2));
-      }
-   }
-} @else {
-   // По брейк-поинтам
-   [class*="__container"] {
+  // Отзывчивая
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
       margin: 0 auto;
-      @if ($maxWidthContainer>0) {
-         max-width: rem($maxWidthContainer);
-         box-sizing: content-box;
-      } @else {
-         @if ($containerPadding>0) {
-            padding: 0 rem(math.div($containerPadding, 2));
-         }
+      background-color: #fff;
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
       }
-      @media (max-width: $pc) {
-         max-width: rem(970);
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
       }
-      @media (max-width: $tablet) {
-         max-width: rem(750);
-      }
-      @media (max-width: $mobile) {
-         max-width: none;
-         @if ($containerPadding>0 and $maxWidthContainer>0) {
-            padding: 0 rem(math.div($containerPadding, 2));
-         }
-      }
-   }
+    }
+  }
 }
 
 // Подключение базовых стилей, шаблонов (заготовок) и вспомагательных классов
@@ -118,20 +122,22 @@ body {
 @import "base";
 
 // Подключение стилей отдельных блоков
-@import "bem-bloks";
 @import "header";
-@import "products-slider";
-@import "new-products";
-@import "article-module";
-@import "footer";
+// @import "footer";
 
 // Подключение стилей отдельных страниц
 @import "home";
-//@import "catalog";
-//@import "product";
 
 // Основной блок страницы ====================================================================================================
 .page {
-   flex: 1 1 auto;
-   background-color: #fefefe;
+  min-width: 0;
+  display: flex;
+}
+.content {
+  @include adaptiveValue("padding-top", 40, 20, 1440, 1100, 1);
+  @include adaptiveValue("padding-left", 70, 20, 1440, 1100, 1);
+  width: 80%;
+  @media (max-width: $tablet) {
+    width: 90%;
+  }
 }
