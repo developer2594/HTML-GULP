@@ -34,7 +34,9 @@ $responsiveType: 1;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em(
+  $containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
@@ -48,24 +50,44 @@ $mainOrangeColor: #e8aa31;
 @import "base/null";
 
 body {
-   color: $mainColor;
-   // Скролл заблокирован
-   .lock & {
-      overflow: hidden;
-   }
+  color: $mainColor;
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+  }
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-   min-height: 100%;
-   display: flex;
-   flex-direction: column;
-   overflow: hidden;
-   // Сайт загружен
-   .loaded & {
-   }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Сайт загружен
+  .loaded & {
+  }
 }
-
+#lable {
+  display: inline-flex;
+  align-items: center;
+  color: red;
+  font-size: rem(14);
+  font-weight: 600;
+  @media (max-width: em(1010)) {
+    margin-left: rem(-40);
+  }
+  @media (max-width: $tablet) {
+    margin: 0;
+  }
+  &:before {
+    font-size: rem(8);
+    transform: rotate(90deg);
+    @media (max-width: $tablet) {
+      transform: rotate(180deg);
+      margin-right: 3px;
+    }
+  }
+}
 // Ограничивающий контейнер ===========================================================================================================
 
 /*
@@ -75,42 +97,42 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
-   // Отзывчивая
-   [class*="__container"] {
-      @if ($maxWidthContainer>0) {
-         max-width: rem($maxWidthContainer);
-         box-sizing: content-box;
-         margin: 0 auto;
-      }
-      @if ($containerPadding>0) {
-         padding: 0 rem(math.div($containerPadding, 2));
-      }
-   }
-} @else {
-   // По брейк-поинтам
-   [class*="__container"] {
+  // Отзывчивая
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
       margin: 0 auto;
-      @if ($maxWidthContainer>0) {
-         max-width: rem($maxWidthContainer);
-         box-sizing: content-box;
-      } @else {
-         @if ($containerPadding>0) {
-            padding: 0 rem(math.div($containerPadding, 2));
-         }
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
       }
-      @media (max-width: $pc) {
-         max-width: rem(970);
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
       }
-      @media (max-width: $tablet) {
-         max-width: rem(750);
-      }
-      @media (max-width: $mobile) {
-         max-width: none;
-         @if ($containerPadding>0 and $maxWidthContainer>0) {
-            padding: 0 rem(math.div($containerPadding, 2));
-         }
-      }
-   }
+    }
+  }
 }
 
 // Подключение базовых стилей, шаблонов (заготовок) и вспомагательных классов
@@ -123,6 +145,8 @@ body {
 @import "products-slider";
 @import "new-products";
 @import "article-module";
+@import "catalog";
+@import "product";
 @import "footer";
 
 // Подключение стилей отдельных страниц
@@ -132,6 +156,6 @@ body {
 
 // Основной блок страницы ====================================================================================================
 .page {
-   flex: 1 1 auto;
-   background-color: #fefefe;
+  flex: 1 1 auto;
+  background-color: #fefefe;
 }
