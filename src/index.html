@@ -1,129 +1,287 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('html/_head.htm',{ "title":"Главная" })
-  <body>
-    <div class="wrapper">
-      <main class="page">
-        <div class="dashboard">
-          <div class="dashboard-header">
-            <div class="dashboard-header__icon icon-header_icon"></div>
-            <h1 class="dashboard-header__title">Dashboard<span>v.01</span></h1>
-          </div>
-          <div class="dashboard-menu">
-            <ul class="dashboard-menu__items">
-              <li class="dashboard-menu__item icon-key">
-                <a href="/" class="dashboard-menu__link icon-arrow"
-                  >Dashboard</a
-                >
-              </li>
-              <li class="dashboard-menu__item icon-product">
-                <a href="/" class="dashboard-menu__link icon-arrow">Product</a>
-              </li>
-              <li class="dashboard-menu__item icon-kostomers">
-                <a href="/" class="dashboard-menu__link icon-arrow"
-                  >Customers</a
-                >
-              </li>
-              <li class="dashboard-menu__item icon-income">
-                <a href="/" class="dashboard-menu__link icon-arrow">Income</a>
-              </li>
-              <li class="dashboard-menu__item icon-promote">
-                <a href="/" class="dashboard-menu__link icon-arrow">Promote</a>
-              </li>
-              <li class="dashboard-menu__item icon-help">
-                <a href="/" class="dashboard-menu__link icon-arrow">Help</a>
-              </li>
-            </ul>
-          </div>
-          <div class="dashboard-footer">
-            <div class="dashboard-footer__image">
-              <img src="@img/icons/user.jpg" alt="user" />
-            </div>
-            <div class="dashboard-footer__user">
-              <div class="dashboard-footer__name">Evano</div>
-              <div class="dashboard-footer__job">Project Manager</div>
-            </div>
-          </div>
-        </div>
-        <div class="content">
-          <div class="content__hello">
-            <h2>Hello Evano 👋🏼,</h2>
-            <div class="icon-menu">
-              <span></span>
-            </div>
-          </div>
-          <div class="content__container">
-            <div class="content-header">
-              <div class="content-header__title">All Customers</div>
-              <div class="content-header__searchs">
-                <button class="content-header__btn icon-search"></button>
-                <input
-                  autocomplete="off"
-                  type="text"
-                  placeholder="Search..."
-                  class="content-header__search" />
-              </div>
-            </div>
-            <div class="content-info">
-              <div class="content-info__table">
-                <div class="content-info__header">
-                  <div class="content-info__info">
-                    <div
-                      data="name"
-                      class="content-info__name content-info__list">
-                      <div>Customer Name</div>
-                    </div>
-                    <div
-                      data="company"
-                      class="content-info__company content-info__list">
-                      <div>Company</div>
-                    </div>
-                    <div
-                      data="number"
-                      class="content-info__number content-info__list">
-                      <div>Phone Number</div>
-                    </div>
-                    <div
-                      data="email"
-                      class="content-info__email content-info__list">
-                      <div>Email</div>
-                    </div>
-                    <div
-                      data="country"
-                      class="content-info__country content-info__list">
-                      <div>Country</div>
-                    </div>
-                    <div
-                      data="status"
-                      class="content-info__status content-info__list">
-                      <div>Status</div>
-                    </div>
+@@include('html/_head.htm',{
+"title":"zlatmax"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page page__home">
+         <section class="page__main-block main-block">
+            <div class="main-block__container">
+               <div class="main-block__body">
+                  <div class="main-block__slider">
+                     <div class="main-block__swiper">
+                        <div class="main-block__slide slide-main-block">
+                           <div class="slide-main-block__content">
+                              <h2 data-swiper-parallax="-100" class="slide-main-block__title">Интернет магазин
+                                 сертифицированных </h2>
+                              <div data-swiper-parallax="-150" class="slide-main-block__sub-title">златоустовских ножей
+                              </div>
+                              <div data-swiper-parallax="-200" class="slide-main-block__text">
+                                 Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине
+                                 представлен наиболее широкий выбор Златоустовских ножей от Златоустовских
+                                 Оружейных Фабрик и компаний, мы являемся официальными поставщиками.
+                              </div>
+                           </div>
+                           <a data-swiper-parallax="-300" href="" class="slide-main-block__button button">Подробнее</a>
+                        </div>
+                        <div class="main-block__slide slide-main-block">
+                           <div class="slide-main-block__content">
+                              <h2 data-swiper-parallax="-100" class="slide-main-block__title">Интернет магазин
+                                 сертифицированных </h2>
+                              <div data-swiper-parallax="-150" class="slide-main-block__sub-title">златоустовских ножей
+                              </div>
+                              <div data-swiper-parallax="-200" class="slide-main-block__text">
+                                 Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине
+                                 представлен наиболее широкий выбор Златоустовских ножей от Златоустовских
+                                 Оружейных Фабрик и компаний, мы являемся официальными поставщиками.
+                              </div>
+                           </div>
+                           <a data-swiper-parallax="-300" href="" class="slide-main-block__button button">Подробнее</a>
+                        </div>
+                        <div class="main-block__slide slide-main-block">
+                           <div class="slide-main-block__content">
+                              <h2 data-swiper-parallax="-100" class="slide-main-block__title">Интернет магазин
+                                 сертифицированных </h2>
+                              <div data-swiper-parallax="-150" class="slide-main-block__sub-title">златоустовских ножей
+                              </div>
+                              <div data-swiper-parallax="-200" class="slide-main-block__text">
+                                 Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине
+                                 представлен наиболее широкий выбор Златоустовских ножей от Златоустовских
+                                 Оружейных Фабрик и компаний, мы являемся официальными поставщиками.
+                              </div>
+                           </div>
+                           <a data-swiper-parallax="-300" href="" class="slide-main-block__button button">Подробнее</a>
+                        </div>
+                     </div>
+                     <div class="main-block__controll controll-main-block">
+                        <div class="controll-main-block__dotts dotts"></div>
+                        <div class="controll-main-block__fraction fraction-controll">
+                           <span class="fraction-controll__current">0</span> / <span class="fraction-controll__all">0</span>
+
+                        </div>
+                     </div>
                   </div>
-                </div>
-                <div class="content-info__body"></div>
-              </div>
-              <div class="content-info__navigation navigation-persons">
-                <div class="navigation-persons__length navigation-length">
-                  <span class="navigation-length__text">Showing data</span>
-                  <span class="navigation-length__page">1</span> to
-                  <span class="navigation-length__pages">8</span> of
-                  <span class="navigation-length__entries">256K</span> entries
-                </div>
-                <div class="navigation-persons__panell panell-navigate">
-                  <button
-                    class="panell-navigate__arrow icon-arrow-left squere"></button>
-                  <div class="panell-navigate__numbers">
-                    <div class="panell-navigate__num squere active">1</div>
+                  <div class="main-block__media media-main-block">
+                     <div class="media-main-block__body">
+                        <div class="media-main-block__image">
+                           <img src="@img/main-block/image-01.png" alt="">
+                        </div>
+                        <div class="media-main-block__tips">
+                           <button type="button" data-tippy-content="подсказка" class="media-main-block__tip media-main-block__tip_1">
+                              <span>+</span>
+                           </button>
+                           <button type="button" data-tippy-content="подсказка" class="media-main-block__tip media-main-block__tip_2">
+                              <span>+</span>
+                           </button>
+                           <button type="button" data-tippy-content="подсказка" class="media-main-block__tip media-main-block__tip_3">
+                              <span>+</span>
+                           </button>
+                        </div>
+                     </div>
                   </div>
-                  <button
-                    class="panell-navigate__arrow icon-arrow-right squere"></button>
-                </div>
-              </div>
+               </div>
+               <div class="main-block__adventeges advanteges-main">
+                  <div class="advanteges-main__item">
+                     <div class="advanteges-main__icon">
+                        <img src="@img/main-block/icons/01.svg" alt="icon">
+                     </div>
+                     <div class="advanteges-main__text">Гарантия 100% возврата
+                        денежных средств</div>
+                  </div>
+
+                  <div class="advanteges-main__item">
+                     <div class="advanteges-main__icon">
+                        <img src="@img/main-block/icons/02.svg" alt="icon">
+                     </div>
+                     <div class="advanteges-main__text">Доставка по России,
+                        Казахстану и Белоруссии</div>
+                  </div>
+
+                  <div class="advanteges-main__item">
+                     <div class="advanteges-main__icon">
+                        <img src="@img/main-block/icons/03.svg" alt="icon">
+                     </div>
+                     <div class="advanteges-main__text">Возможность оформление
+                        заказа без регистрации.</div>
+                  </div>
+
+                  <div class="advanteges-main__item">
+                     <div class="advanteges-main__icon">
+                        <img src="@img/main-block/icons/04.svg" alt="icon">
+                     </div>
+                     <div class="advanteges-main__text">Скидки постоянным
+                        покупателям. </div>
+                  </div>
+               </div>
+
             </div>
-          </div>
-        </div>
+         </section>
+         <section class="page__catalog-carts catalog-carts">
+            <div class="catalog-carts__container">
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Каталог ножей</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/01.jpg" alt="картинка">
+                  </div>
+               </div>
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Среднеклинковое оружие</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/02.jpg" alt="картинка">
+                  </div>
+               </div>
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Длинноклинковое оружие</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/03.jpg" alt="картинка">
+                  </div>
+               </div>
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Сувенирные изделия</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/04.jpg" alt="картинка">
+                  </div>
+               </div>
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Сопутствующие товары</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/05.jpg" alt="картинка">
+                  </div>
+               </div>
+               <div class="catalog-carts__item item-catalog-carts">
+                  <div class="item-catalog-carts__body">
+                     <h3 class="item-catalog-carts__title">
+                        <a href="" class="item-catalog-carts__link-title">Ножевая мастерская</a>
+                     </h3>
+                     <ul class="item-catalog-carts__list">
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Туристические</a></li>
+                        <li class="item-catalog-carts__item"><a href="" class="item-catalog-carts__link">Охотничьи</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="item-catalog-carts__image">
+                     <img src="@img/catalog-carts/06.jpg" alt="картинка">
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="page__hits-products hits-products">
+            @@include('html/_products-slider.htm',{
+            "title":"Хиты продаж",
+            "moretext":"Перейти в каталог"
+            })
+         </section>
+         <section class="page__new-products new-products">
+            @@include('html/_new-products.htm',{
+            "title":"Новинки",
+            "moretext":"Больше новинок"
+            })
+         </section>
+         <section class="page__sale-products sale-products no-bottom">
+            @@include('html/_products-slider.htm',{
+            "title":"Акции",
+            "moretext":"Все акции"
+            })
+         </section>
+         <section class="page__sale-products sale-products">
+            @@include('html/_products-slider.htm',{
+            "title":"Акции",
+            "moretext":"Все акции"
+            })
+         </section>
+         <section class="page__new-inner-products new-products">
+            <div class="new-products__inner">
+               @@include('html/_new-products.htm',{
+               "title":"Новинки",
+               "moretext":"Больше новинок"
+               })
+            </div>
+         </section>
+         <section class="page__sale-products sale-products no-bottom">
+            @@include('html/_products-slider.htm',{
+            "title":"Акции",
+            "moretext":"Все акции"
+            })
+         </section>
+         <section class="page__sale-products sale-products">
+            @@include('html/_products-slider.htm',{
+            "title":"Акции",
+            "moretext":"Все акции"
+            })
+         </section>
+         @@include('html/_article-module.htm',{
+         "title":"Наши статьи"
+         })
+         <section class="page__flashlight-block flashlight-block">
+            @@include('html/_products-slider.htm',{
+            "title":"Фонари",
+            "moretext":"Перейти в каталог"
+            })
+         </section>
       </main>
-    </div>
-    @@include('html/_js.htm',{})
-  </body>
+      @@include('html/_footer.htm',{})
+   </div>
+   @@include('html/_js.htm',{})
+</body>
+
 </html>
