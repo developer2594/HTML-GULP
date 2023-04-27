@@ -1,193 +1,192 @@
 .page {
-   &__main-block {
-      @include adaptiveValue("padding-top", 40, 40);
-      @include adaptiveValue("padding-bottom", 60, 45);
-   }
-   &__catalog-carts {
-      @include adaptiveValue("padding-top", 100, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   &__hits-products {
-      @include adaptiveValue("padding-top", 50, 10);
-      @include adaptiveValue("padding-bottom", 50, 40);
-   }
+  &__main-block {
+    @include adaptiveValue("padding-top", 40, 40);
+    @include adaptiveValue("padding-bottom", 60, 45);
+  }
+  &__catalog-carts {
+    @include adaptiveValue("padding-top", 100, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  &__hits-products {
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 50, 40);
+  }
 
-   &__new-products {
-      @include adaptiveValue("padding-top", 20, 10);
-      @include adaptiveValue("padding-bottom", 46, 30);
-   }
-   &__sale-products {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 30);
-   }
-   &__new-inner-products {
-      @include adaptiveValue("padding-bottom", 50, 30);
-   }
-   &__article-module {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   &__products-block {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   &__flashlight-block {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   &__products-pro {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   &__recomendation-pro {
-      @include adaptiveValue("padding-top", 50, 20);
-      @include adaptiveValue("padding-bottom", 50, 20);
-   }
-   // .page__header
+  &__new-products {
+    @include adaptiveValue("padding-top", 20, 10);
+    @include adaptiveValue("padding-bottom", 46, 30);
+  }
+  &__sale-products {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 30);
+  }
+  &__new-inner-products {
+    @include adaptiveValue("padding-bottom", 50, 30);
+  }
+  &__article-module {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  &__products-block {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  &__flashlight-block {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  &__products-pro {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  &__recomendation-pro {
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  // .page__header
 
-   &__header {
-      margin: rem(20) 0;
-   }
+  &__header {
+    margin: rem(20) 0;
+  }
 }
 .catalog {
-   padding-top: rem(10);
-   @include adaptiveValue("padding-bottom", 100, 30);
+  padding-top: rem(10);
+  @include adaptiveValue("padding-bottom", 100, 30);
 }
 .product {
-   padding-top: rem(10);
-   @include adaptiveValue("padding-bottom", 50, 20);
+  padding-top: rem(10);
+  @include adaptiveValue("padding-bottom", 50, 20);
 }
 //========================================================================================================================================================
 // .dotts
 
 .dotts {
-   display: grid;
-   grid-auto-flow: column;
-   margin: 0 auto;
-   justify-content: center;
-   transform: translate(0px, 10%);
-   .swiper-pagination-bullet {
-      margin: 0px rem(7.5);
-      cursor: pointer;
-      position: relative;
-      height: rem(30);
-      width: rem(18);
-      transition: width 0.3s ease 0s;
-      &::after {
-         content: "";
-         height: rem(2);
-         top: 50%;
-         transform: translate(0px, -50%);
-         position: absolute;
-         width: 100%;
-      }
-      &::before {
-         content: "";
-         position: absolute;
-         width: rem(10);
-         height: rem(10);
-         top: 50%;
-         left: 0;
-         transform: translate(0px, -50%);
-         border-radius: 50%;
-         background-color: $mainOrangeColor;
-         opacity: 0;
-      }
-   }
-   .swiper-pagination-bullet-active {
-      width: rem(30);
-      &::after {
-         background-color: $mainOrangeColor;
-      }
-      &::before {
-         opacity: 1;
-         left: rem(8);
-         transition: left 3s linear 0s;
-      }
-   }
+  display: grid;
+  grid-auto-flow: column;
+  margin: 0 auto;
+  justify-content: center;
+  transform: translate(0px, 10%);
+  .swiper-pagination-bullet {
+    margin: 0px rem(7.5);
+    cursor: pointer;
+    position: relative;
+    height: rem(30);
+    width: rem(18);
+    transition: width 0.3s ease 0s;
+    &::after {
+      content: "";
+      height: rem(2);
+      top: 50%;
+      transform: translate(0px, -50%);
+      position: absolute;
+      width: 100%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: rem(10);
+      height: rem(10);
+      top: 50%;
+      left: 0;
+      transform: translate(0px, -50%);
+      border-radius: 50%;
+      background-color: $mainOrangeColor;
+      opacity: 0;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    width: rem(30);
+    &::after {
+      background-color: $mainOrangeColor;
+    }
+    &::before {
+      opacity: 1;
+      left: rem(8);
+      transition: left 3s linear 0s;
+    }
+  }
 }
 //========================================================================================================================================================
 .breadcrumbs {
-   white-space: nowrap;
-   height: rem(22);
-   padding: rem(0) rem(0) rem(30) rem(0);
-   @media (max-width: $mobileSmall) {
-      overflow: auto;
-   }
-   // .breadcrumbs__list
+  white-space: nowrap;
+  padding: rem(0) rem(0) rem(30) rem(0);
+  @media (max-width: $mobileSmall) {
+    overflow: auto;
+  }
+  // .breadcrumbs__list
 
-   &__list {
-      gap: rem(15);
-      display: flex;
-   }
+  &__list {
+    gap: rem(15);
+    display: flex;
+  }
 
-   // .breadcrumbs__item
+  // .breadcrumbs__item
 
-   &__item {
-      font-weight: 500;
-      line-height: math.div(20, 16);
-   }
+  &__item {
+    font-weight: 500;
+    line-height: math.div(20, 16);
+  }
 
-   // .breadcrumbs__link
+  // .breadcrumbs__link
 
-   &__link {
-      display: flex;
-      align-items: center;
-      opacity: 0.5;
-      &::after {
-         content: "\e901";
-         @extend %ic;
-         margin: rem(0) em(15, 12);
-         font-size: rem(12);
+  &__link {
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    &::after {
+      content: "\e901";
+      @extend %ic;
+      margin: rem(0) em(15, 12);
+      font-size: rem(12);
+    }
+  }
+
+  // .breadcrumbs__current
+
+  &__current {
+    color: $mainOrangeColor;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
       }
-   }
-
-   // .breadcrumbs__current
-
-   &__current {
-      color: $mainOrangeColor;
-      @media (any-hover: hover) {
-         &:hover {
-            text-decoration: underline;
-         }
-      }
-   }
+    }
+  }
 }
 .title {
-   font-weight: 700;
-   font-size: rem(24);
-   line-height: math.div(29, 24);
-   color: $mainDarkColor;
-   &:not(:last-child) {
-      margin-bottom: rem(25);
-   }
+  font-weight: 700;
+  font-size: rem(24);
+  line-height: math.div(29, 24);
+  color: $mainDarkColor;
+  &:not(:last-child) {
+    margin-bottom: rem(25);
+  }
 }
 .filtr-menu-button {
-   font-weight: 600;
-   font-size: rem(20);
-   line-height: math.div(24, 20);
-   background-color: $mainDarkColor;
-   color: #fff;
-   padding: rem(13) rem(30);
-   display: flex;
-   align-items: center;
-   flex-direction: row-reverse;
-   justify-content: space-between;
-   width: 100%;
-   &::before {
-      font-size: rem(7);
-      color: $mainOrangeColor;
+  font-weight: 600;
+  font-size: rem(20);
+  line-height: math.div(24, 20);
+  background-color: $mainDarkColor;
+  color: #fff;
+  padding: rem(13) rem(30);
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  &::before {
+    font-size: rem(7);
+    color: $mainOrangeColor;
+    transition: transform 0.3s ease 0s;
+  }
+  &._spoller-active {
+    &::before {
       transition: transform 0.3s ease 0s;
-   }
-   &._spoller-active {
-      &::before {
-         transition: transform 0.3s ease 0s;
-         transform: rotate(180deg);
-      }
-   }
+      transform: rotate(180deg);
+    }
+  }
 }
 .margins {
-   &__body {
-      padding: rem(30);
-   }
+  &__body {
+    padding: rem(30);
+  }
 }

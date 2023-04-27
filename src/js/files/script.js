@@ -27,8 +27,8 @@ function documentAction(e) {
       const activeLink = document.querySelector("._sub-menu-active");
       const activeBlock = document.querySelector("._sub-menu-open");
       if (activeLink && activeLink === targetElement) {
-        //   activeBlock.classList.remove("._sub-menu-open");
-        //   activeLink.classList.remove("._sub-menu-active");
+        activeBlock.classList.remove("._sub-menu-open");
+        activeLink.classList.remove("._sub-menu-active");
         document.documentElement.classList.remove("._sub-menu-open");
         document.documentElement.classList.remove("._sub-menu-active");
         document.documentElement.classList.remove("sub-menu-open");
