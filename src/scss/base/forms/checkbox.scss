@@ -1,53 +1,74 @@
 .checkbox {
-	position: relative;
-	// .checkbox__input
-	&__input {
-		position: absolute;
-		width: 0;
-		height: 0;
-		opacity: 0;
-		visibility: hidden;
-		&:checked + .checkbox__text:before {
-			background: #fff url("../img/icons/check.svg") center no-repeat;
-		}
-	}
-	// .checkbox__text
-	&__text {
-		display: inline-flex;
-		align-items: center;
-		position: relative;
-		font-size: 16px;
-		color: #ffffff;
-		letter-spacing: -0.3px;
-		line-height: calc(20 / 16);
-		cursor: pointer;
-		&:before {
-			content: "";
-			align-self: flex-start;
-			margin: 0px 14px 0px 0px;
-			flex: 0 0 20px;
-			left: 0;
-			top: 0;
-			width: 20px;
-			height: 18px;
-			background: #fff;
-			border: 1px solid #a7a9ac;
-		}
-	}
-	a {
-		color: #fff;
-		text-decoration: underline;
-		@media (any-hover: hover) {
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
-	&._error {
-		.checkbox__text {
-			&:before {
-				border: 1px solid #ee1212;
-			}
-		}
-	}
+   position: relative;
+   // .checkbox__input
+   &__input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      &:checked + .checkbox__label:after {
+         transform: scale(1);
+         transition: transform 0.2s ease 0s;
+      }
+   }
+   &__label {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      gap: rem(18);
+      &::before {
+         content: "";
+         align-self: flex-start;
+         flex: 0 0 rem(18);
+         width: rem(18);
+         height: rem(18);
+         border: 1px solid $mainOrangeColor;
+         border-radius: 2px;
+      }
+      &::after {
+         content: "";
+         transform: scale(0);
+         position: absolute;
+         width: rem(14);
+         height: rem(14);
+         top: rem(2);
+         left: rem(2);
+         transition: transform 0.2s ease 0s;
+         background-color: $mainOrangeColor;
+      }
+   }
+   // .checkbox__text
+   &__text {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: math.div(20, 16);
+      color: $mainDarkColor;
+      letter-spacing: -0.3px;
+      cursor: pointer;
+      & small {
+         margin: rem(0) rem(0) rem(0) rem(15);
+         color: $mainOrangeColor;
+      }
+   }
+   a {
+      color: #fff;
+      text-decoration: underline;
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: none;
+         }
+      }
+   }
+   &._error {
+      .checkbox__text {
+         &:before {
+            border: 1px solid #ee1212;
+         }
+      }
+   }
 }
