@@ -1,0 +1,131 @@
+.stay-safe {
+   // .stay-safe__container
+
+   &__container {
+      display: flex;
+      align-items: center;
+      padding: rem(79) 15px rem(94) 15px;
+      @media (max-width: $tablet) {
+         flex-direction: column-reverse;
+         padding: rem(15) 0px rem(15) rem(48);
+         align-items: stretch;
+      }
+      @media (max-width: $mobileSmall) {
+         padding: rem(15) 0px rem(5) 0px;
+      }
+   }
+   // .stay-safe__media
+
+   &__media {
+      //display: flex;
+      flex: 1 0 50%;
+      padding: 0px 0px 0px rem(48);
+      @media (max-width: $tablet) {
+         padding: 0px 0px 0px rem(30);
+         flex: 1 1 100%;
+         //justify-content: center;
+      }
+      @media (max-width: $mobile) {
+         //width: 100%;
+         padding: 0px 0px rem(5) rem(30);
+      }
+   }
+   // .stay-safe__body
+   &__body {
+      position: relative;
+      width: rem(338);
+      text-align: center;
+      padding: 0px 0px rem(27) 0px;
+      @media (max-width: $mobile) {
+         width: 53%;
+      }
+      @media (max-width: $mobileSmall) {
+         width: 290px;
+      }
+   }
+
+   // .stay-safe__image
+   &__image {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding: rem(56) 0px 0px 0px;
+      z-index: 5;
+
+      &::after {
+         content: "";
+         position: absolute;
+         z-index: 1;
+         width: 100%;
+         height: 27px;
+         bottom: -12px;
+         left: 0;
+         background: rgba(240, 240, 240, 0.49);
+         border-radius: 16px;
+      }
+      & img {
+         width: 100%;
+         box-shadow: 2px 4px 32px rgba(0, 0, 0, 0.25);
+         border-radius: 16px;
+      }
+   }
+
+   // .stay-safe__elements
+   &__elements {
+      position: absolute;
+      background: #ec5863;
+      border-radius: 30px;
+      width: 77px;
+      height: 77px;
+      z-index: 1;
+   }
+   // .stay-safe__element-1
+
+   &__element-1 {
+      width: 147px;
+      height: 147px;
+      left: 0;
+      top: 0;
+   }
+
+   // .stay-safe__element-2
+
+   &__element-2 {
+      right: 32px;
+      bottom: 108px;
+   }
+
+   // .stay-safe__element-3
+
+   &__element-3 {
+      left: 32px;
+      bottom: 0;
+   }
+
+   // .stay-safe__text
+
+   &__block {
+      flex: 0 1 50%;
+      padding: 0px 0px 0px rem(10);
+      &:last-child {
+         margin-bottom: rem(20);
+      }
+      @media (max-width: $mobile) {
+         flex: 1 0 100%;
+      }
+   }
+
+   // .stay-safe__content
+
+   &__content {
+      max-width: rem(380);
+   }
+
+   // .stay-safe__title
+
+   &__title {
+      & span {
+         color: #ec5863;
+      }
+   }
+}

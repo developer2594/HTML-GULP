@@ -1,0 +1,162 @@
+.healthcare {
+   padding: rem(80) 0px rem(30) 0px;
+   @media (max-width: $mobile) {
+      padding: rem(30) 0px rem(15) 0px;
+   }
+}
+.header-healthcare {
+   margin: 0px 0px rem(46) 0px;
+   // .header-healthcare__text-center
+
+   &__text-center {
+      max-width: rem(770);
+      margin: 0 auto;
+      text-align: center;
+   }
+
+   // .header-healthcare__title
+
+   &__title {
+      & span {
+         color: #ec5863;
+      }
+   }
+}
+.items-healthcare {
+   display: flex;
+   row-gap: rem(20);
+   @media (max-width: $tablet) {
+      flex-direction: column;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+   @media (max-width: $mobileSmall) {
+      min-width: 100%;
+   }
+   // .items-healthcare__content
+
+   &__content {
+      position: relative;
+      padding: 0px rem(35);
+      flex: 0 1 33.333%;
+      @media (max-width: $pc) {
+         padding: 0px rem(15);
+      }
+   }
+
+   // .items-healthcare__item
+
+   &__item {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
+      border-radius: 8px;
+      max-width: rem(278);
+      padding: rem(36) rem(17);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 0 auto;
+      @media (max-width: $tablet) {
+         max-width: 100%;
+      }
+   }
+
+   // .items-healthcare__item-1
+
+   &__content_1 {
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         background: #ec5863;
+         z-index: 1;
+      }
+      &::before {
+         width: rem(96);
+         height: rem(96);
+         right: 15px;
+         top: 35px;
+         border-radius: 30px;
+         transform: rotate(105deg);
+         @media (max-width: $tablet) {
+            right: -10px;
+         }
+      }
+      &::after {
+         width: rem(65);
+         height: rem(65);
+         left: 20px;
+         bottom: -25px;
+         border-radius: 16px;
+         transform: rotate(-30deg);
+      }
+   }
+
+   // .items-healthcare__item-2
+
+   &__content_2 {
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         width: rem(127);
+         height: rem(127);
+         background: #ec5863;
+         right: -30px;
+         bottom: -20px;
+         border-radius: 30px;
+         transform: rotate(-30deg);
+      }
+   }
+
+   // .items-healthcare__item-3
+
+   &__content_3 {
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         width: rem(65);
+         height: rem(65);
+         background: #ec5863;
+         right: 50px;
+         top: -25px;
+         border-radius: 16px;
+         transform: rotate(-30deg);
+      }
+   }
+   // .items-healthcare__image
+
+   &__image {
+      margin: 0px 0px rem(58) 0px;
+      @media (max-width: $mobile) {
+         margin: 0px 0px rem(30) 0px;
+      }
+   }
+
+   // .items-healthcare__title
+
+   &__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: math.div(22, 16);
+      letter-spacing: rem(1.5);
+      color: #000000;
+      margin: 0px 0px rem(4) 0px;
+   }
+
+   // .items-healthcare__text
+
+   &__text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: rem(12);
+      line-height: math.div(17, 12);
+      letter-spacing: rem(0.8);
+      color: #616161;
+   }
+}
