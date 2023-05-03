@@ -1,9 +1,11 @@
 //====================================================================================================
 .main {
+  position: relative;
+  padding: 0;
   // .main__image-ibg
 
   &__image-ibg {
-    @include adaptiveValue("padding-top", 180, 80);
+    @include adaptiveValue("padding-top", 100, 70);
     margin: rem(0) rem(0) rem(100) rem(0);
     z-index: 1;
     padding-bottom: rem(15);
@@ -160,26 +162,20 @@
 //====================================================================================================
 .designing {
   background-color: #fafafa;
-  padding: rem(30) rem(0) rem(30) rem(0);
-  @media (max-width: $mobile) {
-    padding: rem(0) rem(0) rem(30) rem(0);
-  }
   // .designing__container
 
   &__container {
     text-align: center;
     @media (max-width: $mobileSmall) {
-      padding: 0;
+      padding: rem(3) 0;
     }
   }
 
   // .designing__body
 
   &__header {
-    padding: rem(50) rem(0) rem(50) rem(0);
-    @media (max-width: $mobile) {
-      padding: rem(50) rem(0) rem(30) rem(0);
-    }
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
   }
 
   // .designing__title
@@ -263,10 +259,6 @@
 //===================================================================================================================================================
 .practice {
   background-color: #fafafa;
-  padding: rem(30) rem(0) rem(100) rem(0);
-  @media (max-width: $mobile) {
-    padding: rem(5) rem(0) rem(100) rem(0);
-  }
 
   // .practice__container
 
@@ -336,6 +328,9 @@
     flex-direction: column;
     padding: rem(25) rem(25) rem(50) rem(25);
     flex: 1 1 auto;
+    @media (max-width: $mobileSmall) {
+      padding: rem(25) rem(25) rem(25) rem(25);
+    }
   }
   // .practice-item__title
 
@@ -374,7 +369,8 @@
 
   &__header {
     text-align: center;
-    padding: rem(50) rem(0);
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 50, 10);
   }
 
   // .who-we__title
@@ -388,37 +384,62 @@
   // .who-we__subtitle
 
   &__subtitle {
+    max-width: rem(520);
   }
 
   // .who-we__body
 
   &__body {
+    @include adaptiveValue("margin-left", -50, 0, 1440, 992, 1);
     display: grid;
+    @include adaptiveValue("gap", 100, 15, 1440, 992, 1);
     grid-template-columns: repeat(
       auto-fit,
-      minmax(rem(650), 1fr) minmax(rem(350), 1fr)
+      minmax(rem(300), rem(600)) minmax(rem(300), 1fr)
     );
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 50, 10);
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto, auto);
+    }
   }
   // .who-we__video
 
   &__video {
+    position: relative;
+    min-height: rem(200);
+    max-height: rem(440);
+    @media (max-width: $mobile) {
+      @include adaptiveValue("height", 440, 200);
+    }
+    & iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
   }
 
   // .who-we__info
 
   &__info {
     max-width: rem(350);
+    @media (max-width: $mobile) {
+      margin: 0 auto;
+    }
   }
-}
-.title {
-}
-.subtitle {
 }
 .info-who-we {
   // .info-who-we__header
 
   &__header {
     text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
   }
 
   // .info-who-we__title
@@ -434,11 +455,45 @@
   // .info-who-we__items
 
   &__items {
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(30);
   }
 
   // .info-who-we__item
 
   &__item {
+    display: flex;
+    align-items: start;
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  // .info-who-we__icon
+  &__icon {
+    width: rem(45);
+    height: rem(45);
+    margin-right: rem(20);
+    @media (max-width: $mobileSmall) {
+      margin-right: rem(10);
+    }
+  }
+
+  // .info-who-we__block
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+  // .info-who-we__title
+  &__title {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(24, 16);
+    letter-spacing: 0.1px;
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
   }
 
   // .info-who-we__text
@@ -476,7 +531,6 @@
     padding: rem(50) rem(25);
     gap: rem(10);
     @media (max-width: $mobile) {
-      flex-wrap: wrap;
       padding: rem(25);
       grid-template-columns: repeat(auto-fit, minmax(rem(180), 1fr));
     }
@@ -486,6 +540,9 @@
     }
     &:not(:last-child) {
       margin-bottom: rem(20);
+    }
+    & .brands-icons__icon {
+      text-align: center;
     }
   }
 

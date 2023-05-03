@@ -1,3 +1,7 @@
+section {
+  @include adaptiveValue("padding-top", 60, 10);
+  @include adaptiveValue("padding-bottom", 60, 10);
+}
 .text {
   font-weight: 500;
   font-size: rem(20);
