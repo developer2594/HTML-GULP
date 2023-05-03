@@ -1,207 +1,141 @@
 //====================================================================================================
 .header {
-  position: relative;
-  background-color: #fafbfd;
-  z-index: 6;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: rem(70);
-  @include adaptiveValue("min-height", 100, 70, 1300, 700, 2);
-  padding: rem(30) rem(0);
-  @media (any-hover: hover) {
-    &:hover {
-      &::before {
-        content: "";
-        transition: all 0.3s ease 0s;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
-        background-color: #fff;
-      }
-    }
-  }
-  @media (max-width: $tablet) {
-    padding: rem(25) rem(0);
-    min-height: rem(70);
-  }
-  @media (max-width: $mobile) {
-    padding: rem(15) rem(0);
-    min-height: rem(70);
-  }
-  // .header__container
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 3;
+   // .header__body
 
-  &__container {
-    padding: 0px 15px;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  // .header__logo
-
-  &__logo {
-    z-index: 8;
-    @media (max-width: $mobileSmall) {
-      max-width: rem(40);
-      overflow: hidden;
-    }
-  }
-  // .header__button
-  &__button {
-    @include adaptiveValue("width", 252, 170, 900, 320, 2);
-    display: flex;
-    justify-content: flex-end;
-    z-index: 8;
-    position: relative;
-    @media (max-width: $mobile) {
-      flex: 1 1 33.333%;
-    }
-  }
-  &__menu-icon {
-    display: none;
-    @media (max-width: $mobile) {
+   &__body {
+      padding: rem(35) rem(0);
       display: flex;
-      flex: 1 1 auto;
-      justify-content: flex-end;
-      flex: 0 1 33.333%;
-    }
-  }
-}
-.button {
-  padding: rem(14) rem(32);
-  color: #fcfdfe;
-  border-radius: rem(5);
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: rem(1);
-  text-transform: uppercase;
-  background-color: #ec5863;
-  display: inline-block;
-  @media (any-hover: hover) {
-    &:hover {
-      background-color: #ec5346;
-      transition: background-color 0.3s ease 0s;
-    }
-  }
-  // .button_blue
-  &_blue {
-    background-color: #4285f4;
-    @media (any-hover: hover) {
-      &:hover {
-        background-color: #4285a4;
-        transition: background-color 0.3s ease 0s;
+      align-items: center;
+      @media (max-width: $mobile) {
+         width: 100%;
+         justify-content: space-between;
+         padding: rem(20) rem(0);
       }
-    }
-  }
+   }
+
+   // .header__logo
+
+   &__logo {
+      @include adaptiveValue("padding-right", 150, 30);
+      font-weight: 700;
+      font-size: rem(24);
+      line-height: math.div(32, 24);
+      letter-spacing: 0.1px;
+      position: relative;
+      z-index: 3;
+      @media (max-width: $mobile) {
+         padding: rem(0) rem(0) rem(0) rem(15);
+      }
+   }
+
+   // .header__menu
+
+   &__menu {
+      display: flex;
+      gap: rem(20);
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         padding: rem(0) rem(0) rem(0) rem(30);
+         gap: rem(15);
+      }
+   }
 }
-.menu {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1 1 auto;
-  @media (max-width: $mobile) {
-    justify-content: center;
-  }
-  // menu__body
-  &__body {
-    @media (max-width: $mobile) {
-      position: fixed;
-      padding: rem(70) rem(20);
-      top: 0;
-      left: -100%;
+.menu-header {
+   // .menu-header__item
+
+   &__item {
+   }
+   // .menu-header__body
+
+   &__body {
+      position: absolute;
       width: 100%;
-      height: 100%;
-      transition: all 0.5s ease 0s;
-      z-index: 5;
+      height: 100vh;
+      top: 0;
+      left: 150%;
+      background-color: #0d5c63;
+      padding: rem(80) rem(0) rem(0) rem(0);
+      z-index: 2;
+      transition: left 0.3s ease 0s;
       .menu-open & {
-        background-color: #fff;
-        left: 0;
-        overflow: auto;
+         transition: left 0.3s ease 0s;
+         left: 0;
       }
-    }
-  }
-  // .menu__list
+   }
 
-  &__list {
-    display: flex;
-    @include adaptiveValue("gap", 40, 20, 900, 767, 2);
-    @include adaptiveValue("margin-right", 40, 20, 900, 650, 2);
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 700;
-    font-size: rem(10);
-    line-height: math.div(12, 10);
-    letter-spacing: 0.14em;
-    text-align: center;
-    @media (max-width: $mobile) {
-      flex-direction: column;
-      row-gap: rem(30);
-      font-size: rem(20);
-    }
-  }
+   // .menu-header__link
 
-  // .menu__item
-
-  &__item {
-    @media (any-hover: hover) {
-      &:hover {
-        text-decoration: underline;
+   &__link {
+      font-weight: 600;
+      line-height: math.div(24, 14);
+      letter-spacing: 0.2px;
+      color: #737373;
+      @media (max-width: $mobile) {
+         font-size: rem(22);
+         color: #fff;
       }
-    }
-    @media (max-width: $mobile) {
-      min-width: 100%;
-    }
-  }
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+            color: $mainColor;
+            transition: color 0.3s ease 0s;
+         }
+      }
+   }
 }
+
 //====================================================================================================
 
 //Burger
 
 .icon-menu {
-  display: none;
-  @media (max-width: $mobile) {
-    display: block;
-    position: relative;
-    width: 30px;
-    height: 18px;
-    cursor: pointer;
-    z-index: 6;
-    span,
-    &::before,
-    &::after {
-      content: "";
-      transition: all 0.3s ease 0s;
-      left: 0px;
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: #000;
-    }
-    &::before {
-      top: 0px;
-    }
-    &::after {
-      bottom: 0px;
-    }
-    span {
-      top: calc(50% - 1px);
-    }
-    .menu-open & {
-      span {
-        transform: scale(0);
+   display: none;
+   @media (max-width: $mobile) {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+      z-index: 5;
+      span,
+      &::before,
+      &::after {
+         content: "";
+         transition: all 0.3s ease 0s;
+         left: 0px;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #000;
       }
       &::before {
-        transform: rotate(-45deg);
-        top: calc(50% - 1px);
+         top: 0px;
       }
       &::after {
-        transform: rotate(45deg);
-        bottom: calc(50% - 1px);
+         bottom: 0px;
       }
-    }
-  }
+      span {
+         top: calc(50% - 1px);
+      }
+      .menu-open & {
+         color: #fff;
+         span {
+            transform: scale(0);
+         }
+         &::before {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+         }
+         &::after {
+            transform: rotate(45deg);
+            bottom: calc(50% - 1px);
+         }
+      }
+   }
 }
