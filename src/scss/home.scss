@@ -113,13 +113,22 @@
     flex: 1 1 auto;
     flex-direction: column;
     gap: rem(10);
+<<<<<<< HEAD
     padding: rem(35) rem(30);
     border: 1px solid #0d5c63;
     transition: all 0.3s ease 0s;
+=======
+    padding: rem(35) rem(30) rem(35) rem(30);
+    border: 1px solid #0d5c63;
+>>>>>>> 571ba08c0ffa6cfe4d100133b531f561a31609ab
     cursor: pointer;
     @media (any-hover: hover) {
       &:hover {
         background-color: #0d5c63;
+<<<<<<< HEAD
+=======
+        transition: all 0.3s ease 0s;
+>>>>>>> 571ba08c0ffa6cfe4d100133b531f561a31609ab
         & .cards-main__title,
         .cards-main__text,
         .cards-main__icon svg {
@@ -132,7 +141,12 @@
 
   // .cards-main__icon
 
+<<<<<<< HEAD
   &__icon {
+=======
+  &__icon svg {
+    fill: #0d5c63;
+>>>>>>> 571ba08c0ffa6cfe4d100133b531f561a31609ab
   }
 
   // .cards-main__title
@@ -216,16 +230,27 @@
     align-items: center;
     gap: rem(10);
     background-color: #fff;
+<<<<<<< HEAD
     padding: rem(30);
     transition: all 0.3s ease 0s;
     @media (max-width: $mobile) {
       padding: rem(15);
+=======
+    padding: rem(30) rem(30);
+    transition: all 0.3s ease 0s;
+    @media (max-width: $mobile) {
+      padding: rem(15) rem(15);
+>>>>>>> 571ba08c0ffa6cfe4d100133b531f561a31609ab
     }
     @media (any-hover: hover) {
       &:hover {
         transition: all 0.3s ease 0s;
+<<<<<<< HEAD
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: #d9ebec;
+=======
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+>>>>>>> 571ba08c0ffa6cfe4d100133b531f561a31609ab
         cursor: pointer;
       }
     }
