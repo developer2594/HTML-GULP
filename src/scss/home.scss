@@ -390,16 +390,16 @@
   // .who-we__body
 
   &__body {
-    @include adaptiveValue("margin-left", -50, 0, 1440, 992, 1);
     display: grid;
-    @include adaptiveValue("gap", 100, 15, 1440, 992, 1);
+    // @include adaptiveValue("gap", 100, 15, 1440, 992, 1);
     grid-template-columns: repeat(
       auto-fit,
       minmax(rem(300), rem(600)) minmax(rem(300), 1fr)
     );
     @include adaptiveValue("padding-top", 50, 10);
     @include adaptiveValue("padding-bottom", 50, 10);
-    @media (max-width: $mobile) {
+    justify-content: space-between;
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(auto, auto);
     }
@@ -408,8 +408,9 @@
 
   &__video {
     position: relative;
-    min-height: rem(200);
-    max-height: rem(440);
+    padding-bottom: 73%;
+    // min-height: rem(200);
+    // max-height: rem(440);
     @media (max-width: $mobile) {
       @include adaptiveValue("height", 440, 200);
     }
@@ -426,7 +427,8 @@
   // .who-we__info
 
   &__info {
-    max-width: rem(350);
+    justify-content: end;
+    align-items: end;
     @media (max-width: $mobile) {
       margin: 0 auto;
     }
@@ -436,20 +438,10 @@
   // .info-who-we__header
 
   &__header {
-    text-align: center;
+    text-align: left;
     &:not(:last-child) {
       margin-bottom: rem(10);
     }
-  }
-
-  // .info-who-we__title
-
-  &__title {
-  }
-
-  // .info-who-we__subtitle
-
-  &__subtitle {
   }
 
   // .info-who-we__items
@@ -457,33 +449,26 @@
   &__items {
     display: flex;
     flex-direction: column;
+    align-items: left;
     padding-top: rem(30);
   }
 
   // .info-who-we__item
 
   &__item {
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: start;
+    &::before {
+      position: absolute;
+      left: rem(-40);
+      font-size: rem(24);
+      color: #ff7b47;
+    }
     &:not(:last-child) {
       margin-bottom: rem(30);
     }
-  }
-
-  // .info-who-we__icon
-  &__icon {
-    width: rem(45);
-    height: rem(45);
-    margin-right: rem(20);
-    @media (max-width: $mobileSmall) {
-      margin-right: rem(10);
-    }
-  }
-
-  // .info-who-we__block
-  &__block {
-    display: flex;
-    flex-direction: column;
   }
   // .info-who-we__title
   &__title {
@@ -494,11 +479,6 @@
     &:not(:last-child) {
       margin-bottom: rem(5);
     }
-  }
-
-  // .info-who-we__text
-
-  &__text {
   }
 }
 //====================================================================================================================================================
@@ -622,6 +602,11 @@
       letter-spacing: 0;
       font-size: rem(12);
     }
+    @media (any-hover: hover) {
+      &:hover {
+        background: #e27a51;
+      }
+    }
   }
 }
 //====================================================================================================================================================
@@ -664,8 +649,7 @@
   &__item {
     position: relative;
     background-color: #fff;
-    padding-top: rem(50);
-    padding-bottom: rem(50);
+    padding: rem(50) 0;
     @include adaptiveValue("padding-right", 40, 20, 1200, 780, 1);
     @include adaptiveValue("padding-left", 40, 20, 1200, 780, 1);
     align-items: center;
@@ -683,25 +667,29 @@
     @media (max-width: $mobileSmall) {
       padding: rem(30) rem(20);
     }
-    &_elem {
+    &::before {
+      content: "";
+      position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       background-color: #fff;
-      position: absolute;
-      z-index: 1;
-      transition: all 0.5s ease 0s;
+      transition: all 0.3s ease 0s;
     }
     @media (any-hover: hover) {
       &:hover {
-        .getin__item_elem {
+        &:before {
           transform: scaleY(1.1);
           background-color: $mainColor;
+          transition: all 0.3s ease 0s;
         }
         .getin__text,
-        .getin__imail {
+        .getin__imail,
+        .getin__item_icon svg {
           color: #fff;
+          fill: #fff;
+          transition: fill 0.3s ease 0s;
         }
         .getin__button {
           color: #fff;
@@ -709,14 +697,21 @@
         }
       }
     }
-  }
-
-  // .getin__icon
-
-  &__icon {
-    width: rem(72);
-    height: rem(72);
-    z-index: 3;
+    // .getin__item_icon
+    &_icon {
+      position: relative;
+      display: flex;
+      width: rem(72);
+      height: rem(72);
+      z-index: 5;
+      & svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: fill 0.3s ease 0s;
+        fill: #0d5c63;
+      }
+    }
   }
 
   // .getin__imail
@@ -811,7 +806,7 @@
     display: flex;
     width: 100%;
     flex: 0 1 50%;
-    justify-content: center;
+    justify-content: end;
     @media (max-width: $mobile) {
       padding: rem(30) rem(0);
     }
@@ -828,8 +823,14 @@
     background: #ff7b47;
     border-radius: 5px;
     padding: rem(15) rem(40);
+    transition: background 0.3s ease 0s;
     @media (max-width: $mobileSmall) {
       padding: rem(10) rem(50);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background: #e27a51;
+      }
     }
   }
 }

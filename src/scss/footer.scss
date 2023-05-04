@@ -36,36 +36,6 @@
     font-size: rem(16);
     line-height: math.div(24, 16);
     letter-spacing: 0.1px;
-    @media (max-width: em(860)) {
-      &::before {
-        content: "";
-        background: url("@img/icons/arrow_right_white.svg") top / cover
-          no-repeat;
-        width: 15px;
-        height: 15px;
-        top: rem(5);
-        right: rem(-20);
-        position: absolute;
-        transform: rotate(90deg);
-        transition: all 0.3s ease 0s;
-      }
-    }
-
-    &._spoller-active {
-      transition: all 0.3s ease 0s;
-      color: #ff7b47;
-      &::before {
-        transform: rotate(-90deg);
-      }
-    }
-    &:not(:last-child) {
-      margin-bottom: rem(20);
-    }
-  }
-
-  // .row-footer__item
-
-  &__item {
     &:not(:last-child) {
       margin-bottom: rem(10);
     }
@@ -74,14 +44,46 @@
         text-decoration: underline;
       }
     }
+    &::before {
+      display: none;
+      @media (max-width: em(860)) {
+        display: block;
+        top: rem(5);
+        right: rem(-20);
+        font-size: rem(12);
+        position: absolute;
+        transform: rotate(90deg);
+        transition: all 0.3s ease 0s;
+        z-index: 5;
+      }
+    }
+    // .row-footer__button spoller-active
+    &._spoller-active {
+      transition: all 0.3s ease 0s;
+      color: #ff7b47;
+      &::before {
+        transform: rotate(-90deg);
+      }
+    }
   }
+  // .row-footer__list
+  &__list {
+    margin-bottom: rem(10);
+  }
+  // .row-footer__item
 
-  // .row-footer__link
-
-  &__link {
+  &__item {
     font-weight: 600;
     line-height: math.div(24, 14);
     letter-spacing: 0.2px;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 .row-footer {
@@ -100,13 +102,14 @@
     display: flex;
     align-items: flex-start;
     max-width: rem(260);
-    & img {
-      width: 24px;
-      height: 24px;
-      margin-right: rem(10);
-    }
     &:not(:last-child) {
       margin-bottom: rem(13);
+    }
+    &::before {
+      font-size: rem(24);
+      color: #8ec2f2;
+      margin-right: rem(20);
+      margin-top: rem(5);
     }
   }
 
