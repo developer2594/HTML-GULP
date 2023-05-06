@@ -63,12 +63,7 @@ body {
   overflow: hidden;
   grid-template-rows: auto 1fr auto;
   position: relative;
-
   overflow-x: hidden;
-
-  // Сайт загружен
-  .loaded & {
-  }
 }
 
 // Ограничивающий контейнер ===========================================================================================================

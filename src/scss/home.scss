@@ -119,6 +119,9 @@
     border: 1px solid #0d5c63;
     transition: all 0.3s ease 0s;
     cursor: pointer;
+    @media (max-width: $mobileSmall) {
+      padding: rem(25);
+    }
     @media (any-hover: hover) {
       &:hover {
         background-color: #0d5c63;
@@ -130,11 +133,6 @@
         }
       }
     }
-  }
-
-  // .cards-main__icon
-
-  &__icon {
   }
 
   // .cards-main__title
@@ -191,11 +189,6 @@
   &__text {
     max-width: rem(520);
   }
-
-  // .designing__cards
-
-  &__cards {
-  }
 }
 .cards-designing {
   display: grid;
@@ -227,11 +220,6 @@
     }
   }
 
-  // .cards-designing__icon
-
-  &__icon {
-  }
-
   // .cards-designing__info
 
   &__info {
@@ -260,11 +248,6 @@
 .practice {
   background-color: #fafafa;
 
-  // .practice__container
-
-  &__container {
-  }
-
   // .practice__header
 
   &__header {
@@ -273,11 +256,6 @@
     @media (max-width: $mobile) {
       padding: rem(20) rem(0);
     }
-  }
-
-  // .practice__title
-
-  &__title {
   }
 
   // .practice__subtitle
@@ -329,7 +307,7 @@
     padding: rem(25) rem(25) rem(50) rem(25);
     flex: 1 1 auto;
     @media (max-width: $mobileSmall) {
-      padding: rem(25) rem(25) rem(25) rem(25);
+      padding: rem(15);
     }
   }
   // .practice-item__title
@@ -391,13 +369,13 @@
 
   &__body {
     display: grid;
-    // @include adaptiveValue("gap", 100, 15, 1440, 992, 1);
+    gap: rem(20);
     grid-template-columns: repeat(
       auto-fit,
-      minmax(rem(300), rem(600)) minmax(rem(300), 1fr)
+      minmax(rem(300), rem(600)) minmax(rem(300), rem(350))
     );
-    @include adaptiveValue("padding-top", 50, 10);
-    @include adaptiveValue("padding-bottom", 50, 10);
+    // @include adaptiveValue("padding-top", 50, 10);
+    // @include adaptiveValue("padding-bottom", 50, 10);
     justify-content: space-between;
     @media (max-width: $tablet) {
       grid-template-columns: 1fr;
@@ -409,8 +387,8 @@
   &__video {
     position: relative;
     padding-bottom: 73%;
-    // min-height: rem(200);
-    // max-height: rem(440);
+    min-height: rem(200);
+    max-height: rem(440);
     @media (max-width: $mobile) {
       @include adaptiveValue("height", 440, 200);
     }
@@ -427,9 +405,9 @@
   // .who-we__info
 
   &__info {
-    justify-content: end;
-    align-items: end;
-    @media (max-width: $mobile) {
+    max-width: rem(350);
+    @media (max-width: $tablet) {
+      max-width: rem(400);
       margin: 0 auto;
     }
   }
@@ -451,41 +429,65 @@
     flex-direction: column;
     align-items: left;
     padding-top: rem(30);
+    @media (max-width: $mobileSmall) {
+      padding-top: 0;
+    }
   }
 
   // .info-who-we__item
 
   &__item {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    &::before {
-      position: absolute;
-      left: rem(-40);
-      font-size: rem(24);
-      color: #ff7b47;
-    }
+    display: grid;
+    grid-template-areas:
+      "icon title"
+      "icon text";
     &:not(:last-child) {
       margin-bottom: rem(30);
+      @media (max-width: $mobile) {
+        margin-bottom: rem(10);
+      }
     }
   }
+
+  // .info-who-we__icon
+  &__icon {
+    grid-area: icon;
+    & svg {
+      width: rem(52);
+      height: rem(52);
+    }
+  }
+
   // .info-who-we__title
   &__title {
     font-weight: 700;
     font-size: rem(16);
     line-height: math.div(24, 16);
     letter-spacing: 0.1px;
+    grid-area: title;
+    &::before {
+      position: absolute;
+      left: rem(-40);
+      font-size: rem(24);
+      color: #ff7b47;
+      @media (max-width: $mobileSmall) {
+        font-size: rem(18);
+      }
+    }
     &:not(:last-child) {
       margin-bottom: rem(5);
     }
   }
+  &__text {
+    grid-area: text;
+  }
 }
 //====================================================================================================================================================
 .brands {
+  padding-top: 0;
   position: relative;
   z-index: 3;
-  padding: rem(0) rem(0) rem(40) rem(0);
   background-color: #fafafa;
   &::before {
     content: "";
@@ -517,9 +519,6 @@
     @media (max-width: $mobileSmall) {
       grid-template-columns: repeat(auto-fit, minmax(rem(105), rem(110)));
       padding: rem(10);
-    }
-    &:not(:last-child) {
-      margin-bottom: rem(20);
     }
     & .brands-icons__icon {
       text-align: center;
@@ -612,10 +611,6 @@
 //====================================================================================================================================================
 .getin {
   background-color: #fafafa;
-  padding: rem(0) rem(0) rem(100) rem(0);
-  @media (max-width: $mobile) {
-    padding: rem(0) rem(0) rem(30) rem(0);
-  }
 
   // .getin__header
 
@@ -623,7 +618,7 @@
     padding: rem(50) rem(0) rem(50) rem(0);
     text-align: center;
     @media (max-width: $mobile) {
-      padding: rem(30) rem(0);
+      padding: rem(15) rem(0);
     }
   }
 
@@ -665,7 +660,7 @@
       padding: rem(50) rem(40);
     }
     @media (max-width: $mobileSmall) {
-      padding: rem(30) rem(20);
+      padding: rem(20) rem(20);
     }
     &::before {
       content: "";
@@ -774,7 +769,7 @@
     flex: 0 1 50%;
     padding: rem(40) rem(0);
     @media (max-width: $mobile) {
-      padding: rem(20) rem(10);
+      padding: rem(10) rem(10);
     }
   }
 
@@ -808,7 +803,7 @@
     flex: 0 1 50%;
     justify-content: end;
     @media (max-width: $mobile) {
-      padding: rem(30) rem(0);
+      padding: rem(15) rem(0);
     }
   }
 

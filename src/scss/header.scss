@@ -16,7 +16,6 @@
     @media (max-width: $mobile) {
       width: 100%;
       justify-content: space-between;
-      // padding: rem(10) rem(0);
     }
   }
 
@@ -32,6 +31,10 @@
     z-index: 3;
     @media (max-width: $mobile) {
       padding: rem(0) rem(0) rem(0) rem(15);
+      .menu-open & {
+        color: #fff;
+        transition: all 0.3s ease 0s;
+      }
     }
   }
 
@@ -48,10 +51,6 @@
   }
 }
 .menu-header {
-  // .menu-header__item
-
-  &__item {
-  }
   // .menu-header__body
 
   &__body {
@@ -64,7 +63,7 @@
     background-color: #0d5c63;
     padding: rem(80) rem(0) rem(0) rem(0);
     z-index: 2;
-    transition: left 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
     .menu-open & {
       transition: left 0.3s ease 0s;
       left: 0;
