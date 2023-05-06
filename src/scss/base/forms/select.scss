@@ -24,7 +24,6 @@
     padding: 0px rem(15);
     justify-content: space-between;
     flex-direction: row-reverse;
-
     @media (max-width: $mobileSmall) {
       padding: 0px rem(5);
       font-size: rem(14);
@@ -131,12 +130,6 @@
     }
     .select__value {
       opacity: 0.5;
-      &::before {
-        content: "\e900";
-        @extend %ic;
-        font-size: rem(8);
-        margin-left: em(10, 8);
-      }
     }
     .select__body {
       height: rem(40);

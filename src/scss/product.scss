@@ -186,6 +186,18 @@
     font-size: rem(18);
     line-height: math.div(22, 18);
     color: rgba(20, 20, 20, 0.5);
+    justify-content: start;
+    .select__value::before {
+      content: "";
+      background-image: url("@img/icons/arrow-bottom.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: rem(12);
+      flex: 0 0 rem(30);
+      background-color: #141414;
+      margin-right: rem(-15);
+      border-radius: 0 rem(3) rem(3) 0;
+    }
   }
 }
 .actions-product {
