@@ -77,3 +77,71 @@ function documentAction(e) {
   }
 }
 //========================================================================================================================================================
+// Доставка
+const countryList = ["Россия", "Украина", "Австрия", "Польша"],
+  russia = [
+    "Москва",
+    "Санкт-Петербург",
+    "Новосибирск",
+    "Екатеринбург",
+    "Казань",
+    "Нижний Новгород	",
+  ],
+  ukraine = ["Київ", "Харків", "Одеса", "Дніпро", "Донецьк"],
+  poland = ["Варшава", "Краков", "Лодзь", "Вроцлав"],
+  ostereich = ["Вена", "Грац", "Линц", "Зальцбург", "Вельс"];
+let tagCountry;
+let tagCity;
+let selectedCity;
+const country = document.querySelector("#country");
+const city = document.querySelector("#city");
+
+if (country) {
+  // add tag select for country
+  const countrySelect = document.createElement("select");
+  countrySelect.classList.add("info-delivery__country");
+  tagCountry = country.appendChild(countrySelect);
+  // add country list for
+  countryList.forEach((item) => {
+    let option = document.createElement("option");
+    option.setAttribute("value", item);
+    option.innerText = `${item}`;
+    tagCountry.appendChild(option);
+  });
+  countrySelect.onchange = function (country) {
+    changCountry(country);
+    // console.log("sel", country.innerText);
+    // add tag select cuty
+  };
+}
+
+if (city) {
+  const citySelect = document.createElement("select");
+  citySelect.classList.add("info-delivery__city");
+  const tagCity = city.appendChild(citySelect);
+
+  const changCountry = function (item) {
+    // console.log("change country", tagCountry.value);
+
+    // add cityes russia
+    if (tagCountry.value === "Россия") {
+      russia.forEach((item) => {
+        let option = document.createElement("option");
+        option.setAttribute("value", item);
+        option.innerText = `${item}`;
+        tagCity.appendChild(option);
+        // console.log(item);
+      });
+
+      // console.log("russia");
+    }
+  };
+}
+
+// country.onchange = function (item) {
+//   selectedCity = tagCountry.value;
+//   // changCountry();
+//   console.log("value", tagCountry.value);
+// };
+
+// tagCity.onchange = function () {};
