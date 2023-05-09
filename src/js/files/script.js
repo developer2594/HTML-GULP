@@ -115,8 +115,8 @@ const countryList = [
 // ==============
 let tagCountry;
 let tagCity;
-const country = document.querySelector("#country");
-const city = document.querySelector("#city");
+const country = document.querySelector(".info-delivery__count-sel");
+const city = document.querySelector(".info-delivery__city-sel");
 
 if (country) {
   // add country list for option
@@ -131,7 +131,6 @@ if (country) {
   // ================
   // add tag select for country
   const countrySelect = document.createElement("select");
-  countrySelect.classList.add("info-delivery__country");
   countrySelect.setAttribute("id", "count-sel");
   tagCountry = country.appendChild(countrySelect);
   addCountryList();
@@ -154,11 +153,9 @@ if (country) {
   });
   // ================================
 }
-
 // add cuty select
 if (city) {
   const citySelect = document.createElement("select");
-  citySelect.classList.add("info-delivery__city");
   citySelect.setAttribute("id", "city-sel");
   tagCity = city.appendChild(citySelect);
   changeCity(russia);

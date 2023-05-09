@@ -570,6 +570,9 @@
     display: flex;
     flex-direction: column;
     gap: rem(20);
+    @media (max-width: $mobileSmall) {
+      margin-left: rem(-10);
+    }
   }
   // .info-delivery__country
   &__country,
@@ -579,50 +582,60 @@
     font-size: rem(18);
     line-height: math.div(22, 18);
     color: $mainDarkColor;
+    @media (max-width: em(520)) {
+      &:not(:last-child) {
+        margin-bottom: rem(10);
+      }
+    }
   }
-  // .info-delivery__city
-  &__city {
-  }
-}
-.product-info {
-  // .product-info__body
-
-  &__body {
+  // .info-delivery__count-sel, city-sel
+  &__count-sel,
+  &__city-sel {
+    position: relative;
+    z-index: 1;
+    border: 1px solid #04040426;
+    border-radius: rem(3);
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("@img/icons/arrow-bottom.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: rem(12);
+      width: rem(40);
+      height: rem(42);
+      top: rem(-1);
+      right: rem(15);
+      background-color: #141414;
+      margin-right: rem(-15);
+      border-radius: 0 rem(3) rem(3) 0;
+      z-index: 1;
+    }
   }
 }
 #country,
 #city {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &::before {
-    content: "";
-    position: absolute;
-    background-image: url("@img/icons/arrow-bottom.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: rem(12);
-    width: rem(40);
-    height: rem(40);
-    top: 0;
-    right: 0;
-    background-color: #141414;
-    margin-right: rem(-15);
-    border-radius: 0 rem(3) rem(3) 0;
+  @media (max-width: em(520)) {
+    flex-direction: column;
+    align-items: start;
   }
-  & select {
-    display: flex;
-    font-style: normal;
-    font-weight: 500;
-    font-size: rem(16);
-    appearance: none;
-    line-height: math.div(20, 16);
-    border: 1px solid #04040426;
-    border-radius: rem(3);
-    height: rem(40);
-    width: rem(300);
-    padding-left: rem(20);
-    background-color: transparent;
-  }
+}
+#city-sel,
+#count-sel {
+  position: relative;
+  z-index: 5;
+  font-style: normal;
+  font-weight: 500;
+  font-size: rem(16);
+  appearance: none;
+  line-height: math.div(20, 16);
+  height: rem(40);
+  max-width: rem(300);
+  min-width: rem(270);
+  padding-left: rem(20);
+  background-color: transparent;
+  outline: none;
 }
