@@ -79,124 +79,100 @@ function documentAction(e) {
 //========================================================================================================================================================
 // Доставка
 const countryList = [
-  {
-    name: "Россия",
-    city: [
-      { value: "moskow", name: "Москва" },
-      { value: "sankPeterburg", name: "Санкт-Петербург" },
-      { value: "novosibirsk", name: "Новосибирск" },
-      { value: "ekaterinburg", name: "Екатеринбург" },
-      { value: "kazan", name: "Казань" },
-      { value: "nijniyNovgorod", name: "Нижний Новгород" },
-    ],
-  },
-
-  {
-    name: "Украина",
-    city: [
-      { value: "kiev", name: "Київ" },
-      { value: "kharkov", name: "Харків" },
-      { value: "odessa", name: "Одеса" },
-      { value: "dnepr", name: "Дніпро" },
-      { value: "donesk", name: "Донецьк" },
-    ],
-  },
-
-  {
-    name: "австрия",
-    city: [
-      { value: "vien", name: "Вена" },
-      { value: "grac", name: "Грац" },
-      { value: "linc", name: "Линц" },
-      { value: "zalcburg", name: "Зальцбург" },
-      { value: "vels", name: "Вельс" },
-    ],
-  },
-
-  {
-    name: "Польша",
-    city: [
-      { value: "vorshava", name: "Варшава" },
-      { value: "krakov", name: "Краков" },
-      { value: "lodz", name: "Лодзь" },
-      { value: "vroclav", name: "Вроцлав" },
-    ],
-  },
-];
-countryList.forEach((el) => {
-  console.log("country test 127", el.city);
-});
+    { value: "russia", name: "Россия" },
+    { value: "ukraine", name: "Украина" },
+    { value: "ostereich", name: "Австрия" },
+    { value: "poland", name: "Польша" },
+  ],
+  russia = [
+    { value: "moskov", name: "Москва" },
+    { value: "sankPeterburg", name: "Санкт-Петербург" },
+    { value: "novosibirsk", name: "Новосибирск" },
+    { value: "ekaterinburg", name: "Екатеринбург" },
+    { value: "kazan", name: "Казань" },
+    { value: "nijniyNovgorod", name: "Нижний Новгород	" },
+  ],
+  ukraine = [
+    { value: "kiev", name: "Київ" },
+    { value: "kharkov", name: "Харків" },
+    { value: "odessa", name: "Одеса" },
+    { value: "dnepr", name: "Дніпро" },
+    { value: "donetsk", name: "Донецьк" },
+  ],
+  poland = [
+    { valee: "varshava", name: "Варшава" },
+    { valee: "krakovo", name: "Краков" },
+    { valee: "lodz", name: "Лодзь" },
+    { valee: "vroclav", name: "Вроцлав" },
+  ],
+  ostereich = [
+    { value: "vien", name: "Вена" },
+    { value: "grac", name: "Грац" },
+    { value: "linc", name: "Линц" },
+    { value: "zalcburg", name: "Зальцбург" },
+    { value: "vels", name: "Вельс" },
+  ];
 // ==============
-
-// ==============
-let cityList = countryList[0];
 let tagCountry;
 let tagCity;
-let selectedCity;
 const country = document.querySelector("#country");
 const city = document.querySelector("#city");
-// console.log(cityList);
 
 if (country) {
-  // add tag select for country
-  const countrySelect = document.createElement("select");
-  countrySelect.classList.add("info-delivery__country");
-  tagCountry = country.appendChild(countrySelect);
-  // add cuty select
-  if (city) {
-    const citySelect = document.createElement("select");
-    citySelect.classList.add("info-delivery__city");
-    tagCity = city.appendChild(citySelect);
-    changeCity();
-  }
   // add country list for option
-  countryList.forEach((el) => {
-    let option = document.createElement("option");
-    option.setAttribute("value", el.name);
-    option.innerText = `${el.name}`;
-    tagCountry.appendChild(option);
-  });
-  // ================
-
-  country.onchange = function (count) {
-    console.log(count.selectedIndex);
-  };
-  // ================================
-
-  function changeCity(el) {
-    console.log("city list", cityList.city);
-    // add city list for cityes
-    cityList.city.forEach((el) => {
+  function addCountryList() {
+    countryList.forEach((el) => {
       let option = document.createElement("option");
       option.setAttribute("value", el.value);
       option.innerText = `${el.name}`;
-      tagCity.appendChild(option);
+      tagCountry.appendChild(option);
     });
   }
-  // =======================
-  // add cityes
-  // function changCountry() {
-  //   cityList.forEach((item) => {
-  //     let option = document.createElement("option");
-  //     option.setAttribute("value", item);
-  //     option.innerText = `${item}`;
-  //     tagCity.appendChild(option);
-  //   });
-  // }
-  // change country
-  // countrySelect.onchange = function (country) {
-  //   this.cityList = country;
-  //   console.log("citylist", country.option);
-  //   this.city = "";
-  //   changCountry();
-  // };
-  // ======================
+  // ================
+  // add tag select for country
+  const countrySelect = document.createElement("select");
+  countrySelect.classList.add("info-delivery__country");
+  countrySelect.setAttribute("id", "count-sel");
+  tagCountry = country.appendChild(countrySelect);
+  addCountryList();
+  const countSel = document.querySelector("#count-sel");
+  // chenge country
+  countSel.addEventListener("change", function () {
+    cutySel.innerHTML = "";
+    if (this.value === "russia") {
+      changeCity(russia);
+    }
+    if (this.value === "ukraine") {
+      changeCity(ukraine);
+    }
+    if (this.value === "poland") {
+      changeCity(poland);
+    }
+    if (this.value === "ostereich") {
+      changeCity(ostereich);
+    }
+  });
+  // ================================
 }
 
-// country.onchange = function (item) {
-//   selectedCity = tagCountry.value;
-//   // changCountry();
-//   console.log("value", tagCountry.value);
-// };
+// add cuty select
+if (city) {
+  const citySelect = document.createElement("select");
+  citySelect.classList.add("info-delivery__city");
+  citySelect.setAttribute("id", "city-sel");
+  tagCity = city.appendChild(citySelect);
+  changeCity(russia);
+}
+const cutySel = document.querySelector("#city-sel");
 
-// tagCity.onchange = function () {};
+// ==================
+
+// add city list for cityes
+function changeCity(el) {
+  el.forEach((item) => {
+    let option = document.createElement("option");
+    option.setAttribute("value", item.value);
+    option.innerText = `${item.name}`;
+    tagCity.appendChild(option);
+  });
+}
