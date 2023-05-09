@@ -63,9 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  // Сайт загружен
-  .loaded & {
-  }
 }
 #lable {
   display: inline-flex;
@@ -151,8 +148,6 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
-//@import "catalog";
-//@import "product";
 
 // Основной блок страницы ====================================================================================================
 .page {

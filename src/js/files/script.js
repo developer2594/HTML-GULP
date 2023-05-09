@@ -13,7 +13,7 @@ if (menuBlocks.length) {
     menuBlock.classList.add(`sub-menu-catalog__block_${menuBlockItems}`);
   });
 }
-//========================================================================================================================================================
+//==========================================
 // открытие и закрытие мены по дата данным
 function documentAction(e) {
   const targetElement = e.target;
@@ -76,7 +76,7 @@ function documentAction(e) {
     e.preventDefault();
   }
 }
-//========================================================================================================================================================
+//=========================================
 // Доставка
 const countryList = [
     { value: "russia", name: "Россия" },
@@ -112,7 +112,6 @@ const countryList = [
     { value: "zalcburg", name: "Зальцбург" },
     { value: "vels", name: "Вельс" },
   ];
-// ==============
 let tagCountry;
 let tagCity;
 const country = document.querySelector(".info-delivery__count-sel");
@@ -128,7 +127,6 @@ if (country) {
       tagCountry.appendChild(option);
     });
   }
-  // ================
   // add tag select for country
   const countrySelect = document.createElement("select");
   countrySelect.setAttribute("id", "count-sel");
@@ -151,7 +149,6 @@ if (country) {
       changeCity(ostereich);
     }
   });
-  // ================================
 }
 // add cuty select
 if (city) {
@@ -161,9 +158,6 @@ if (city) {
   changeCity(russia);
 }
 const cutySel = document.querySelector("#city-sel");
-
-// ==================
-
 // add city list for cityes
 function changeCity(el) {
   el.forEach((item) => {

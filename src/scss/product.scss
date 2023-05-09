@@ -433,20 +433,6 @@
       margin-bottom: rem(10);
     }
   }
-  // .body-info__specification
-
-  &__specification {
-  }
-
-  // .body-info__materials
-
-  &__materials {
-  }
-
-  // .body-info__production
-
-  &__production {
-  }
 }
 .specification-info {
   border-right: 1px solid rgba(20, 20, 20, 0.15);
@@ -475,11 +461,6 @@
     }
   }
 
-  // .specification-info__key
-
-  &__key {
-  }
-
   // .specification-info__meaning
 
   &__meaning {
@@ -494,10 +475,6 @@
     .materials-info__item {
       max-width: none;
     }
-  }
-  // .materials-info__title
-
-  &__title {
   }
 
   // .materials-info__item
