@@ -78,64 +78,119 @@ function documentAction(e) {
 }
 //========================================================================================================================================================
 // Доставка
-const countryList = ["Россия", "Украина", "Австрия", "Польша"],
-  russia = [
-    "Москва",
-    "Санкт-Петербург",
-    "Новосибирск",
-    "Екатеринбург",
-    "Казань",
-    "Нижний Новгород	",
-  ],
-  ukraine = ["Київ", "Харків", "Одеса", "Дніпро", "Донецьк"],
-  poland = ["Варшава", "Краков", "Лодзь", "Вроцлав"],
-  ostereich = ["Вена", "Грац", "Линц", "Зальцбург", "Вельс"];
+const countryList = [
+  {
+    name: "Россия",
+    city: [
+      { value: "moskow", name: "Москва" },
+      { value: "sankPeterburg", name: "Санкт-Петербург" },
+      { value: "novosibirsk", name: "Новосибирск" },
+      { value: "ekaterinburg", name: "Екатеринбург" },
+      { value: "kazan", name: "Казань" },
+      { value: "nijniyNovgorod", name: "Нижний Новгород" },
+    ],
+  },
+
+  {
+    name: "Украина",
+    city: [
+      { value: "kiev", name: "Київ" },
+      { value: "kharkov", name: "Харків" },
+      { value: "odessa", name: "Одеса" },
+      { value: "dnepr", name: "Дніпро" },
+      { value: "donesk", name: "Донецьк" },
+    ],
+  },
+
+  {
+    name: "австрия",
+    city: [
+      { value: "vien", name: "Вена" },
+      { value: "grac", name: "Грац" },
+      { value: "linc", name: "Линц" },
+      { value: "zalcburg", name: "Зальцбург" },
+      { value: "vels", name: "Вельс" },
+    ],
+  },
+
+  {
+    name: "Польша",
+    city: [
+      { value: "vorshava", name: "Варшава" },
+      { value: "krakov", name: "Краков" },
+      { value: "lodz", name: "Лодзь" },
+      { value: "vroclav", name: "Вроцлав" },
+    ],
+  },
+];
+countryList.forEach((el) => {
+  console.log("country test 127", el.city);
+});
+// ==============
+
+// ==============
+let cityList = countryList[0];
 let tagCountry;
 let tagCity;
 let selectedCity;
 const country = document.querySelector("#country");
 const city = document.querySelector("#city");
+// console.log(cityList);
 
 if (country) {
   // add tag select for country
   const countrySelect = document.createElement("select");
   countrySelect.classList.add("info-delivery__country");
   tagCountry = country.appendChild(countrySelect);
-  // add country list for
-  countryList.forEach((item) => {
+  // add cuty select
+  if (city) {
+    const citySelect = document.createElement("select");
+    citySelect.classList.add("info-delivery__city");
+    tagCity = city.appendChild(citySelect);
+    changeCity();
+  }
+  // add country list for option
+  countryList.forEach((el) => {
     let option = document.createElement("option");
-    option.setAttribute("value", item);
-    option.innerText = `${item}`;
+    option.setAttribute("value", el.name);
+    option.innerText = `${el.name}`;
     tagCountry.appendChild(option);
   });
-  countrySelect.onchange = function (country) {
-    changCountry(country);
-    // console.log("sel", country.innerText);
-    // add tag select cuty
+  // ================
+
+  country.onchange = function (count) {
+    console.log(count.selectedIndex);
   };
-}
+  // ================================
 
-if (city) {
-  const citySelect = document.createElement("select");
-  citySelect.classList.add("info-delivery__city");
-  const tagCity = city.appendChild(citySelect);
-
-  const changCountry = function (item) {
-    // console.log("change country", tagCountry.value);
-
-    // add cityes russia
-    if (tagCountry.value === "Россия") {
-      russia.forEach((item) => {
-        let option = document.createElement("option");
-        option.setAttribute("value", item);
-        option.innerText = `${item}`;
-        tagCity.appendChild(option);
-        // console.log(item);
-      });
-
-      // console.log("russia");
-    }
-  };
+  function changeCity(el) {
+    console.log("city list", cityList.city);
+    // add city list for cityes
+    cityList.city.forEach((el) => {
+      let option = document.createElement("option");
+      option.setAttribute("value", el.value);
+      option.innerText = `${el.name}`;
+      tagCity.appendChild(option);
+    });
+  }
+  // =======================
+  // add cityes
+  // function changCountry() {
+  //   cityList.forEach((item) => {
+  //     let option = document.createElement("option");
+  //     option.setAttribute("value", item);
+  //     option.innerText = `${item}`;
+  //     tagCity.appendChild(option);
+  //   });
+  // }
+  // change country
+  // countrySelect.onchange = function (country) {
+  //   this.cityList = country;
+  //   console.log("citylist", country.option);
+  //   this.city = "";
+  //   changCountry();
+  // };
+  // ======================
 }
 
 // country.onchange = function (item) {
